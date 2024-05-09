@@ -1,14 +1,15 @@
 plugins {
-    id 'com.android.application'
+    alias(libs.plugins.androidApplication)
 }
 
 android {
-    compileSdk 32
+    namespace = "com.mao.fragmentdemo"
+    compileSdk = 34
 
     defaultConfig {
-        applicationId "com.example.fragmentdemo"
+        applicationId "com.mao.fragmentdemo"
         minSdk 28
-        targetSdk 32
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 

@@ -23,3 +23,4 @@ rootProject.name = "AndroidPractiseTraining"
 include(":app")
 include(":notificationsdemo")
 include(":fragmentdemo")
+include(":broadcastdemo")
