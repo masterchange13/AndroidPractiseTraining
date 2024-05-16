@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private SharedPreferences sp;
     private EditText et_username, et_password;
     private CheckBox cb_remember, cb_autoLogin;
-    private Button btn_login, btn_register;
+    private Button btn_login, btn_register, btn_jump;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +67,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
 //            Toast.makeText(this, "自动登录", Toast.LENGTH_SHORT).show();
         }
+
+        btn_jump.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SQLiteActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_jump.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SQLiteActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void initView() {
@@ -77,19 +95,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cb_autoLogin = findViewById(R.id.cb_autoLogin);
         btn_login = findViewById(R.id.btn_login);
         btn_register = findViewById(R.id.btn_register);
+        btn_jump = findViewById(R.id.btn_jump);
         btn_login.setOnClickListener(this);
         btn_register.setOnClickListener(this);
-
+        btn_jump.setOnClickListener(this);
     }
 
     public void onClick(View view) {
-//        switch(view.getId()){
-//            if (view == null) {
-//
-//            }
         if (view.getId() == R.id.btn_register) {
 
-//            case R.id.btn_login:
             String username = et_username.getText().toString().trim();
             String password = et_password.getText().toString().trim();
             if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
@@ -115,9 +129,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public void saveToSp(View view){
+    public void saveToSp(View view) {
         sp = getSharedPreferences("saveSpInfo", Context.MODE_PRIVATE);
         sp.edit().putString("username", "123").apply();
     }
 
+    public void jump(View view) {
+        Intent intent = new Intent(this, SQLiteActivity.class);
+        startActivity(intent);
+    }
 }

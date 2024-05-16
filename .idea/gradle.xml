@@ -11,7 +11,10 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/broadcastdemo" />
+            <option value="$PROJECT_DIR$/experimentjump" />
             <option value="$PROJECT_DIR$/fragmentdemo" />
+            <option value="$PROJECT_DIR$/mediaplayer" />
+            <option value="$PROJECT_DIR$/myservice" />
             <option value="$PROJECT_DIR$/notificationsdemo" />
             <option value="$PROJECT_DIR$/savedatedemo" />
           </set>

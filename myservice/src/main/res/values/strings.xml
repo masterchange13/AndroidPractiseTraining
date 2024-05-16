@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyService</string>
+    <string name="local_service_started">bindServiceStart</string>
+    <string name="local_service_stopped">bindServiceStop</string>
+</resources>
