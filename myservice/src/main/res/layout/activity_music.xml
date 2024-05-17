@@ -10,9 +10,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="bindService"
+        android:text="play music"
         android:id="@+id/play_music"
-        android:onClick="toMusic"/>
+        />
 
 
 </LinearLayout>
