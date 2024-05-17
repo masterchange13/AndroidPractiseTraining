@@ -11,12 +11,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="启动服务"
-        android:onClick="toBind"/>
+        android:id="@+id/btn_bind"
+        android:onClick="toStart"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="启动服务"
-        android:onClick="toBind"/>
+        android:text="关闭服务"
+        android:id="@+id/btn_unBind"
+        android:onClick="toStop"/>
     
 </LinearLayout>

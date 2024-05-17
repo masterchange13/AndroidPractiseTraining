@@ -25,4 +25,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, BindServiceActivity.class);
         startActivity(intent);
     }
+
+    public void toMusic(View view){
+        Intent intent = new Intent(this, MusicActivity.class);
+        startActivity(intent);
+    }
 }

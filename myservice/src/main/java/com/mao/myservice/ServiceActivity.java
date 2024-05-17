@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.mao.myservice.service.MyIntentService;
 import com.mao.myservice.service.MyStartService;
 
 public class ServiceActivity extends AppCompatActivity {
@@ -21,7 +22,8 @@ public class ServiceActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 启动服务
-                startService(intent);
+//                startService(intent);
+                startService(new Intent(ServiceActivity.this, MyIntentService.class));
             }
         });
 

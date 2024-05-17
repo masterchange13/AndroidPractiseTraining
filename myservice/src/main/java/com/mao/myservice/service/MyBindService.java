@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
 import com.mao.myservice.BindServiceActivity;
+import com.mao.myservice.R;
 
 import java.util.Random;
 
@@ -28,7 +29,7 @@ public class MyBindService extends Service {
 
     // 自定义一个类实现localBinder
     public class LocalBinder extends Binder{
-        public MyBindService getService(){
+        public MyBindService getService() {
             return MyBindService.this;
         }
     }
@@ -43,18 +44,23 @@ public class MyBindService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        Log.e(getClass().getName(), "onBind");
+        return mBinder;
     }
 
     @Override
     public boolean onUnbind(Intent intent) {
+        Log.e(getClass().getName(), "onUnbind");
         return super.onUnbind(intent);
     }
 
     @Override
     public void onDestroy() {
+        Log.e(getClass().getName(), "onDestroy");
+        manager.cancel(NOTIFICATION);
         super.onDestroy();
     }
+
 
     // 创建通知
     private void showNotification(){
@@ -68,11 +74,10 @@ public class MyBindService extends Service {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,
                 new Intent(this, BindServiceActivity.class), PendingIntent.FLAG_IMMUTABLE);
         notification = new NotificationCompat.Builder(this, channelId)
-                .setSmallIcon(R.mimap.ic_launcher)
+                .setSmallIcon(R.drawable.ic_launcher_background)
                 .setTicker(text)
                 .setWhen(System.currentTimeMillis())
                 .setContentText(text)
-                .setContentTitle(getText(R.string.local_service_started))
                 .build();
         manager.notify(NOTIFICATION, notification);
         Log.e(getClass().getName(), "通知已发出");
